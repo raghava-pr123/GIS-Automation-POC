@@ -1,0 +1,45 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+import time
+import os
+
+# Configure repository details
+REPO_OWNER = "repository_owner"
+REPO_NAME = "repository_name"
+
+# URL of the GitHub repository
+GITHUB_REPO_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}"
+
+# Take a screenshot of the language usage section
+def capture_language_usage_screenshot():
+    options = Options()
+    options.add_argument("--headless")  # Run in headless mode
+    options.add_argument("--window-size=1920,1080")  # Set window size for screenshot
+
+    # Set path to your WebDriver executable
+    driver_service = Service("path/to/chromedriver")
+    driver = webdriver.Chrome(service=driver_service, options=options)
+
+    try:
+        driver.get(GITHUB_REPO_URL)
+        time.sleep(2)  # Allow page to load fully
+
+        # Locate the language bar by its class name
+        language_bar = driver.find_element(By.CLASS_NAME, "Layout-sidebar")  # Sidebar contains the language bar
+
+        # Screenshot path
+        screenshot_path = os.path.join(os.getcwd(), "language_usage_screenshot.png")
+        language_bar.screenshot(screenshot_path)  # Take screenshot of the language section only
+        print(f"Screenshot of language usage saved to {screenshot_path}")
+
+    finally:
+        driver.quit()
+
+# Main function
+def main():
+    capture_language_usage_screenshot()
+
+if __name__ == "__main__":
+    main()

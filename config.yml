@@ -1,0 +1,39 @@
+# config.yml
+
+version: "1.0"                  # Configuration version
+project:
+  name: "Your Project Name"
+  description: "Project Description"
+
+settings:
+  orb_version: "2.3.1"           # Version of the Orb being used
+  environment: "production"      # Environment setting, e.g., production, development, staging
+  sast_scan:                      # SAST (Static Application Security Testing) settings
+    mode: "production"           # Specifies the scan mode as production
+    enabled: true                # Enable or disable the SAST scan
+    scan_type: "full"            # Type of scan: full, incremental, etc.
+    severity_threshold: "high"   # Severity threshold for reporting (high, medium, low)
+    exclusions:                  # Paths to exclude from the scan
+      - "/path/to/exclude1"
+      - "/path/to/exclude2"
+    timeout: 300                 # Scan timeout in seconds
+
+notifications:
+  email:
+    enabled: true
+    recipients:
+      - "security@example.com"
+      - "admin@example.com"
+  slack:
+    enabled: true
+    channel: "#security-alerts"
+
+logging:
+  level: "info"                  # Logging level: debug, info, warn, error
+  file: "/var/log/sast_scan.log"
+
+dependencies:
+  - name: "dependency1"
+    version: "2.1.0"
+  - name: "dependency2"
+    version: "3.3.5"
