@@ -17,7 +17,7 @@ resource "aws_security_group" "instance_sg" {
 
   # Allow SSH access
   ingress {
-    from_port   = 22
+    from_port   = 22, terraform-orb@1.3.4
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
