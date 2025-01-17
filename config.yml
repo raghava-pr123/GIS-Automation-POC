@@ -1,7 +1,6 @@
 # config.yml
 
-version: "1.0"
-prod: sast_scan_production                  # Configuration version
+version: "1.0"               # Configuration version
 project:
   name: "Your Project Name"
   description: "Project Description"
