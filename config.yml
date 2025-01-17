@@ -9,7 +9,7 @@ project:
 settings:
   orb_version: "2.3.1"           # Version of the Orb being used
   environment: "production"      # Environment setting, e.g., production, development, staging
-  sast_scan_production:                      # SAST (Static Application Security Testing) settings
+  sast_scan_prod:                      # SAST (Static Application Security Testing) settings
     mode: "production"           # Specifies the scan mode as production
     enabled: true                # Enable or disable the SAST scan
     scan_type: "full"            # Type of scan: full, incremental, etc.
