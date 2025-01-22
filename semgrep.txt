@@ -1,1 +1,17 @@
+WARNING: SOFT FAIL IS SET TO TRUE - >
 
+
+
+
+
+
+
+
+
+Passed checks: 55, Failed checks: 7, Skipped checks: 0, Parsing errors: 9
+
+
+
+
+
+Ran 60 rules on 26 files: 0 findings
