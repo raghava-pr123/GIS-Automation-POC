@@ -2,5 +2,16 @@
     "GitRepoName": "GIS-Automation-POC",
     "GitRepoURL": "https://github.com/raghava-pr123/GIS-Automation-POC",
     "GitBranch": "test/orb",
-    "GitCommitSHA": 
+    "GitCommitSHA": "f35abfb4f5a90ce5e3043f55f728480e5fb30ae3",
+    "CircleBuildURL": "https://app.circleci.com",
+    "CircleJobDetails": {
+    "contexts": [
+        {
+            "name": "artifactory"
+        }
+    ],
+    "name": "sast_scan_sdt_lle"
+        
+    }
+    
 }
